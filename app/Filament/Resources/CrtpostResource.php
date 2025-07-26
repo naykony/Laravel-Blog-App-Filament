@@ -3,14 +3,14 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CrtpostResource\Pages;
-use App\Models\Crtpost;
 use App\Models\Comment;
+use App\Models\Crtpost;
 use Filament\Forms;
+use Filament\Forms\Components\HasManyRepeater;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\HasManyRepeater; // استفاده از HasManyRepeater برای رابطه hasMany
+use Filament\Tables; // استفاده از HasManyRepeater برای رابطه hasMany
 
 class CrtpostResource extends Resource
 {
@@ -25,7 +25,7 @@ class CrtpostResource extends Resource
             ->schema([
                 TextInput::make('title')->required(),
                 TextInput::make('content')->required(),
-                
+
                 // استفاده از HasManyRepeater برای اضافه کردن کامنت‌ها
                 HasManyRepeater::make('comments') // این رابطه به مدل Comment متصل است
                     ->relationship('comments') // رابطه hasMany با مدل Comment

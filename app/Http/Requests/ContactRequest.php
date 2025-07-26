@@ -10,9 +10,9 @@ class ContactRequest extends FormRequest
     {
         return [
             'name' => ['required'],
-            'email' => ['required' , 'email'],
+            'email' => ['required', 'email'],
             'dec' => ['required'],
-            
+
         ];
     }
 }

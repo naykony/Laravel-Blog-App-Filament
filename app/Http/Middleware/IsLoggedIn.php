@@ -11,14 +11,12 @@ class IsLoggedIn
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
     {
         // اگر کاربر وارد نشده باشد، به صفحه ورود ریدایرکت می‌شود.
-        if (!Auth::check()) {
+        if (! Auth::check()) {
             return redirect()->route('login'); // یا صفحه‌ای که می‌خواهید ریدایرکت کنید
         }
 

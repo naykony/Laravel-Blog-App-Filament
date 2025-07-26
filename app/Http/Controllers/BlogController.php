@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Crtpost ;
+use App\Models\Crtpost;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -11,12 +11,11 @@ class BlogController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {   
-        $posts = Crtpost ::all(); // گرفتن همه پست‌ها
+    {
+        $posts = Crtpost::all(); // گرفتن همه پست‌ها
+
         return view('pages.blog', compact('posts')); // ارسال پست‌ها به ویو 'home'
 
-
-        
     }
 
     /**
@@ -32,17 +31,16 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-            // پیدا کردن پست بر اساس id
-    $post = Crtpost::with('comments.user')->find($id);
-    
+        // پیدا کردن پست بر اساس id
+        $post = Crtpost::with('comments.user')->find($id);
+
         // اگر پست پیدا نشد، نمایش خطای 404
-        if (!$post) {
+        if (! $post) {
             abort(404);  // اگر پست پیدا نشد، خطای 404 نمایش داده می‌شود
         }
-    
+
         // ارسال پست به ویو
         return view('pages.post', compact('post'));
-
 
     }
 

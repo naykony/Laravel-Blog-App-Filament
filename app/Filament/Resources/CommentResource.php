@@ -3,18 +3,13 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CommentResource\Pages;
-use App\Filament\Resources\CommentResource\RelationManagers;
 use App\Models\Comment;
-use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-
-use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 
 class CommentResource extends Resource
 {
@@ -29,7 +24,7 @@ class CommentResource extends Resource
                 TextInput::make('comment'),
                 TextInput::make('crtpost_id'),
                 TextInput::make('rating'),
-                TextInput::make('user_id')
+                TextInput::make('user_id'),
             ]);
     }
 
@@ -40,7 +35,7 @@ class CommentResource extends Resource
                 TextColumn::make('comment'),
                 TextColumn::make('crtpost_id'),
                 TextColumn::make('user_id'),
-                TextColumn::make('rating')
+                TextColumn::make('rating'),
             ])
             ->filters([
                 //

@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Models\User;
-use App\Models\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\UserRequest;
-
 
 class AuthController extends Controller
 {
@@ -39,20 +37,19 @@ class AuthController extends Controller
     }
 
     // عملیات ثبت‌نام
-   public function register(UserRequest $request)
+    public function register(UserRequest $request)
     {
 
-    User::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'password' => bcrypt($request->password),
-    ]);
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
 
-    // ورود خودکار کاربر پس از ثبت‌نام
+        // ورود خودکار کاربر پس از ثبت‌نام
 
         // هدایت به صفحه خانگی
-    return redirect()->route('login_page');
+        return redirect()->route('login_page');
 
-     }
-
+    }
 }

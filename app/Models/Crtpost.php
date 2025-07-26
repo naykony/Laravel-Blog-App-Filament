@@ -1,6 +1,7 @@
 <?php
 
 // app/Models/Crtpost.php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;

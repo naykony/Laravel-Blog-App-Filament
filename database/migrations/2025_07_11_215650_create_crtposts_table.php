@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('Crtposts', function (Blueprint $table) {
             $table->id();
             $table->string('content');
-            $table->text( 'title');
+            $table->text('title');
             $table->timestamps();
         });
     }

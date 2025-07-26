@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\CrtpostResource\Pages;
 
 use App\Filament\Resources\CrtpostResource;
-use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateCrtpost extends CreateRecord

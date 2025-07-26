@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Crtpost;
-
+use Illuminate\Http\Request;
 
 class CretpostController extends Controller
 {
@@ -21,10 +20,11 @@ class CretpostController extends Controller
      */
     public function store(Request $request)
     {
-                Crtpost::query()->create([
-                'title'=> $request->title,
-                'content'=> $request->content,
+        Crtpost::query()->create([
+            'title' => $request->title,
+            'content' => $request->content,
         ]);
+
         return back()->with('success', 'ok');
     }
 

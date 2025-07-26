@@ -16,8 +16,8 @@ class CommentController extends Controller
 
         // بررسی این که آیا کاربر قبلاً کامنت داده است
         $existingComment = Comment::where('crtpost_id', $postId)
-                                  ->where('user_id', Auth::id())
-                                  ->first();
+            ->where('user_id', Auth::id())
+            ->first();
 
         // اگر کامنت وجود داشته باشد، پیام خطا نمایش داده می‌شود
         if ($existingComment) {

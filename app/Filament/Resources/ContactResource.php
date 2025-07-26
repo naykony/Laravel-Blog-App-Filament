@@ -3,18 +3,13 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ContactResource\Pages;
-use App\Filament\Resources\ContactResource\RelationManagers;
 use App\Models\Contact;
-use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-
-use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 
 class ContactResource extends Resource
 {
@@ -28,7 +23,7 @@ class ContactResource extends Resource
             ->schema([
                 TextInput::make('name'),
                 TextInput::make('email'),
-                TextInput::make('dec')
+                TextInput::make('dec'),
 
             ]);
     }
@@ -39,7 +34,7 @@ class ContactResource extends Resource
             ->columns([
                 TextColumn::make('name'),
                 TextColumn::make('email'),
-                TextColumn::make('dec')
+                TextColumn::make('dec'),
 
             ])
             ->filters([
