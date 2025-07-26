@@ -49,3 +49,7 @@ Route::get('/delete', function () {
 Route::get('/edit', function () {
     return view('edit');
 })->name('edit');
+
+Route::get('/ping', function () {
+    return 'pong';
+});
